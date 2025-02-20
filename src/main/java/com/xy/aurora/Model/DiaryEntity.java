@@ -17,6 +17,7 @@ public class DiaryEntity {
     private Timestamp updateDate;
     private String fileName;
     private String fileUrl;
+    private Integer luckyValue;
 
     @Id
     @Column(name = "DiaryId")
@@ -114,6 +115,16 @@ public class DiaryEntity {
 
     public void setFileUrl(String fileUrl) {
         this.fileUrl = fileUrl;
+    }
+
+    @Basic
+    @Column(name = "LuckyValue")
+    public Integer getLuckyValue() {
+        return luckyValue;
+    }
+
+    public void setLuckyValue(Integer luckyValue) {
+        this.luckyValue = luckyValue;
     }
 
     @Override

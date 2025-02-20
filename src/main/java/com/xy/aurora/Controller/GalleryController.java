@@ -20,8 +20,6 @@ public class GalleryController {
 
     @Autowired
     private GalleryService galleryService;
-    @Autowired
-    private FileService fileService;
 
     @PostMapping("queryList")
     public Result queryList(@RequestBody Map<String,String> map) {

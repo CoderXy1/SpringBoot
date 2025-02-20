@@ -19,14 +19,15 @@ public interface DiaryMapper {
             " where diaryId = #{diaryId} ")
     DiaryEntity querySingle(String diaryId);
 
-    @Insert(" insert into diary(DiaryId, Title, Content,Weather,Temperature,FileId,CreateDate) " +
-            " VALUES(#{diaryId},#{title}, #{content}, #{weather},#{temperature},#{fileId}, #{createDate})")
+    @Insert(" insert into diary(DiaryId, Title, Content,Weather,Temperature,LuckyValue,FileId,CreateDate) " +
+            " VALUES(#{diaryId},#{title}, #{content}, #{weather},#{temperature},#{luckyValue},#{fileId}, #{createDate})")
     void insert(DiaryEntity diaryEntity);
 
     @Delete(" delete from diary where diaryId = #{diaryId} ")
     void delete(String diaryId);
 
-    @Update(" update diary set Title = #{title},Content = #{content},Weather = #{weather},Temperature = #{temperature},UpdateDate = NOW() " +
+    @Update(" update diary set Title = #{title},Content = #{content},Weather = #{weather},Temperature = #{temperature}," +
+            " LuckyValue = #{luckyValue},UpdateDate = NOW() " +
             " where diaryId = #{diaryId}")
     void update(DiaryEntity diaryEntity);
 }
