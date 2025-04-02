@@ -13,6 +13,9 @@ public interface NoteMapper {
             " order by CreateDate desc limit #{pageSize} offset #{pageNum} ")
     List<NoteEntity> queryList(int pageNum,int pageSize,String searchKey);
 
+    @Select("select count(*) as icount from note ")
+    Integer queryTotal();
+
     @Select(" select * from note where NoteId = #{noteId}")
     NoteEntity querySingle(String noteId);
 

@@ -50,6 +50,11 @@ public class FileController {
         return Result.success(fileService.queryList(pageNum,pageSize,fileType,startDate,endDate,fileName));
     }
 
+    @PostMapping("queryTotal")
+    public Result queryTotal() {
+        return Result.success(fileService.queryTotal());
+    }
+
     @PostMapping("queryTypes")
     public Result queryTypes() {
         return Result.success(fileService.queryTypes());

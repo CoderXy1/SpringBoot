@@ -17,6 +17,9 @@ public interface FileMapper {
     @SelectProvider(type = FileSqlProvider.class,method = "queryList")
     List<FileEntity> queryList(int pageNum, int pageSize, String fileType, Date startDate, Date endDate,String fileName);
 
+    @Select("select count(*) as icount from file ")
+    Integer queryTotal();
+
     @Insert("insert into file(FileId, FileName, FileType, FileUrl, CreateDate, UpdateDate) " +
             "VALUES(#{fileId}, #{fileName}, #{fileType}, #{fileUrl}, #{createDate}, #{updateDate})")
     void insert(FileEntity fileEntity);

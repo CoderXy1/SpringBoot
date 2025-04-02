@@ -21,6 +21,11 @@ public class NoteServiceImp implements NoteService {
     }
 
     @Override
+    public Integer queryTotal() {
+        return noteMapper.queryTotal();
+    }
+
+    @Override
     public NoteEntity querySingle(String noteId) {
         return noteMapper.querySingle(noteId);
     }

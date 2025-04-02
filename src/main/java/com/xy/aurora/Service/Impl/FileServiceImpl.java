@@ -24,6 +24,11 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
+    public Integer queryTotal() {
+        return fileMapper.queryTotal();
+    }
+
+    @Override
     public void insert(FileEntity fileEntity) {
         fileMapper.insert(fileEntity);
     }

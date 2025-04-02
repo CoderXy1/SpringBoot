@@ -22,6 +22,11 @@ public class GalleryServiceImpl implements GalleryService {
     }
 
     @Override
+    public Integer queryTotal() {
+        return galleryMapper.queryTotal();
+    }
+
+    @Override
     public GalleryEntity querySingle(String galleryId) {
         return galleryMapper.querySingle(galleryId);
     }

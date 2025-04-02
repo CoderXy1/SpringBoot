@@ -27,6 +27,11 @@ public class NoteController {
         return Result.success(noteService.queryList(pageNum,pageSize,searchKey));
     }
 
+    @PostMapping("queryTotal")
+    public Result queryTotal() {
+        return Result.success(noteService.queryTotal());
+    }
+
     @PostMapping("querySingle")
     public Result querySingle(@RequestParam("noteId") String noteId) {
         return Result.success(noteService.querySingle(noteId));

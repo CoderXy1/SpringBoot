@@ -14,6 +14,9 @@ public interface GalleryMapper {
             " order by g.CreateDate desc limit #{pageSize} offset #{pageNum} ")
     List<GalleryEntity> queryList(int pageNum,int pageSize,String searchKey);
 
+    @Select("select count(*) as icount from gallery ")
+    Integer queryTotal();
+
     @Select(" select g.*,f.FileName,f.FileUrl from gallery g " +
             " left join file f on g.FileId = f.FileId " +
             " where galleryId = #{galleryId} ")

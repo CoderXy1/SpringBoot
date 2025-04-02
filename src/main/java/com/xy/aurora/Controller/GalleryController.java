@@ -29,6 +29,11 @@ public class GalleryController {
         return Result.success(galleryService.queryList(pageNum,pageSize,searchKey));
     }
 
+    @PostMapping("queryTotal")
+    public Result queryTotal() {
+        return Result.success(galleryService.queryTotal());
+    }
+
     @PostMapping("querySingle")
     public Result querySingle(@RequestParam("galleryId") String galleryId) {
         return Result.success(galleryService.querySingle(galleryId));

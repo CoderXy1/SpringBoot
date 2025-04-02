@@ -8,6 +8,8 @@ public interface GalleryService {
 
     List<GalleryEntity> queryList(int pageNum, int pageSize,String searchKey);
 
+    Integer queryTotal();
+
     GalleryEntity querySingle(String galleryId);
 
     void insert(GalleryEntity galleryEntity);
